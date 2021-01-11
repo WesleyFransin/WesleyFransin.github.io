@@ -1,7 +1,56 @@
-<!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<head>
+	<meta content="text/html; charset=UTF-8">
+	
+	<!-- Rever CSS par fontes corretas-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/png" href="./ProjetoAquisicao_files/Matlab_Logo.png">
+    <link rel="stylesheet" type="text/css" href="./ProjetoAquisicao_files/style.css">
+	
+	<script src="./ProjetoAquisicao_files/dygraph.js"></script>
+	<link rel="stylesheet" href="./ProjetoAquisicao_files/dygraph.css" />
+	
+	<!-- Carrega os dados para usar nos gráficos -->
+	<script type="text/javascript" src="./ProjetoAquisicao_files/data/dataOriginal.csv"></script>
+	
+    <title>Projeto Final</title>
+</head>
+
+<body style="margin: 0; border:none;">        
+    
+	<section class="header">
+        <span class="links alinha">
+            <a class="link-1" href="#inicio">Início</a>
+            <a class="link-1" href="#parte2">Gráficos</a>
+            <a class="link-1" href="#parte3">Códigos Fontes</a>
+            <!--a class="link-1" href="#parte4">Vehicle</a-->
+        </span>
+
+        <!--span class="media alinha">
+            <center><a href="http://facebook.com/AndorinhaTeam" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="http://instagram.com/AndorinhaTeamBR" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a> 
+            <a href="http://twitter.com/AndorinhaTeam" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></center>
+            </span-->
+    </section>
+	
+    <div class="markerLink" id="inicio"></div>
+	
+	<div style="height: 20px"></div>
+	
+	<div class="chart" id="MyChart">
+	<script>
+		g2 = new Dygraph(
+			document.getElementById("MyChart"),
+			"./ProjetoAquisicao_files/data/dataOriginal.csv",
+			{}          
+		);
+	</script>
+	</div>
 </body>
-</html>	
+</html>
