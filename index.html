@@ -48,7 +48,7 @@
 				return '<br>' + data.series.map(function(series) { return series.dashHTML + ' ' + series.labelHTML }).join('<br>');
 			  }
 
-			  var html = this.getLabels()[0] + ': ' + Math.round(parseFloat(data.xHTML)*100)/100 + ' Hz v2';
+			  var html = this.getLabels()[0] + ': ' + Math.round(parseFloat(data.xHTML)*100)/100 + ' Hz v3';
 			  data.series.forEach(function(series) {
 				if (!series.isVisible) return;
 				console.log(series.yHTML)
