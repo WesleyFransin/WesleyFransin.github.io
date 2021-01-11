@@ -51,6 +51,7 @@
 			  var html = this.getLabels()[0] + ': ' + Math.round(parseFloat(data.xHTML)*100)/100 + ' Hz';
 			  data.series.forEach(function(series) {
 				if (!series.isVisible) return;
+				console.log(series.yHTML)
 				var labeledData = series.labelHTML + ': ' + Math.round(parseFloat(series.yHTML)*100)/100;
 				if (series.isHighlighted) {
 				  labeledData = '<b>' + labeledData + '</b>';
