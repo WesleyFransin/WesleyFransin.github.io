@@ -48,10 +48,10 @@
 				return '<br>' + data.series.map(function(series) { return series.dashHTML + ' ' + series.labelHTML }).join('<br>');
 			  }
 
-			  var html = this.getLabels()[0] + ': ' + data.xHTML;
+			  var html = this.getLabels()[0] + ': ' + Math.round(parseFloat(data.xHTML)*100)/100 + ' Hz';
 			  data.series.forEach(function(series) {
 				if (!series.isVisible) return;
-				var labeledData = series.labelHTML + ': ' + series.yHTML;
+				var labeledData = series.labelHTML + ': ' + Math.round(parseFloat(series.yHTML)*100)/100;
 				if (series.isHighlighted) {
 				  labeledData = '<b>' + labeledData + '</b>';
 				}
@@ -67,6 +67,9 @@
 			legend: "always",
 			valueRange: [0, null],
 			legendFormatter: legendFormatter,
+			title: "Espectro de Frequência",
+			xlabel: "Frequência (Hz)",
+			ylabel: "Amplitude",
 			}          
 		);
 	</script>
