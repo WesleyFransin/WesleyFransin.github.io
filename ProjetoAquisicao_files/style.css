@@ -4,8 +4,8 @@ html {
 
 .chart{
 	background-color: #f6f8f9;
-	max-height: 50px;
-    width: 50%;
+	height: 300px;
+    width: 95%;
 	margin: auto;
 }
 
