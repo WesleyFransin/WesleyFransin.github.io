@@ -71,8 +71,29 @@
 			title: "Espectro de Frequência",
 			xlabel: "Frequência (Hz)",
 			ylabel: "Amplitude",
-			showRangeSelector: true,
-			}          
+			showRangeSelector: false,
+			}
+			/*
+			<button type="button" id="0" onclick="change(this)"> first set</button>
+      var colorSets = [
+        ['#284785', '#EE1111', '#8AE234'],
+        ['#444444', '#888888', '#DDDDDD'],
+        null
+      ]
+      chart = new Dygraph(document.getElementById("blah"),
+                          "X,a,b,c\n" +
+                          "10,12345,23456,34567\n" +
+                          "11,12345,20123,31345\n",
+                          {
+                            width: 640,
+                            height: 480,
+                            colors: colorSets[0]
+                          });
+
+      function change(el) {
+        chart.updateOptions({colors: colorSets[el.id]});
+      }
+    */
 		);
 	</script>
 	</div>
