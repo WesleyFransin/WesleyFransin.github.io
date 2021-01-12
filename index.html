@@ -48,11 +48,11 @@
 				return '<br>' + data.series.map(function(series) { return series.dashHTML + ' ' + series.labelHTML }).join('<br>');
 			  }
 
-			  var html = this.getLabels()[0] + ': ' + (data.xHTML)+ ' m';
+			  var html = this.getLabels()[0] + ': ' + Math.round(parseFloat(data.xHTML)*100)/100 + ' Hz v4';
 			  data.series.forEach(function(series) {
 				if (!series.isVisible) return;
 				console.log(series.yHTML)
-				var labeledData = series.labelHTML + ': ' + parseFloat(series.yHTML)*(10^5) + ' mm';
+				var labeledData = series.labelHTML + ': ' + series.yHTML + ' m';
 				if (series.isHighlighted) {
 				  labeledData = '<b>' + labeledData + '</b>';
 				}
