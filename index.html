@@ -7,8 +7,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"-->
     
     <link rel="shortcut icon" type="image/png" href="./ProjetoAquisicao_files/Matlab_Logo.png">
     <link rel="stylesheet" type="text/css" href="./ProjetoAquisicao_files/style.css">
@@ -39,28 +41,57 @@
     <div class="markerLink" id="inicio"></div>
 	
 	<div style="height: 20px"></div>
-	
+	<form>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="0" value="" onclick='handleClick(this);' checked>Original
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="1" value="" onclick='handleClick(this);' checked>Decimado
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="2" value="" onclick='handleClick(this);' checked>Filtrado
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="3" value="" onclick='handleClick(this);' checked>Decimado com pré-filtro
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="4" value="" onclick='handleClick(this);' checked>Interpolado
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="5" value="" onclick='handleClick(this);' checked>Com filtro de eco
+		</label>
+	</form>
 	<div class="chart" id="MyChart">
 	<script>
 		function legendFormatter(data) {
-			  if (data.x == null) {
-				// This happens when there's no selection and {legend: 'always'} is set.
-				return '<br>' + data.series.map(function(series) { return series.dashHTML + ' ' + series.labelHTML }).join('<br>');
-			  }
-
-			  var html = this.getLabels()[0] + ': ' + Math.round(parseFloat(data.xHTML)*100)/100 + ' Hz';
-			  data.series.forEach(function(series) {
-				if (!series.isVisible) return;
-				console.log(series.yHTML)
-				var labeledData = series.labelHTML + ': ' + series.yHTML + ' m';
-				if (series.isHighlighted) {
-				  labeledData = '<b>' + labeledData + '</b>';
-				}
-				html += '<br>' + series.dashHTML + ' ' + labeledData;
-			  });
-			  return html;
+			if (data.x == null) {
+			// This happens when there's no selection and {legend: 'always'} is set.
+			return '<br>' + data.series.map(function(series) { return series.dashHTML + ' ' + series.labelHTML }).join('<br>');
 			}
-			
+
+			var html = this.getLabels()[0] + ': ' + Math.round(parseFloat(data.xHTML)*100)/100 + ' Hz';
+			data.series.forEach(function(series) {
+			if (!series.isVisible) return;
+			console.log(series.yHTML)
+			var labeledData = series.labelHTML + ': ' + series.yHTML + ' m';
+			if (series.isHighlighted) {
+				labeledData = '<b>' + labeledData + '</b>';
+			}
+			html += '<br>' + series.dashHTML + ' ' + labeledData;
+			});
+			return html;
+		}
+
+		/*function setStatus() {
+			document.getElementById("visibility").innerHTML =
+			g.visibility().toString();
+		}*/
+
+		function handleClick(el) {
+			g.setVisibility(parseInt(el.id), el.checked);
+			//setStatus();
+		}
+
 		g2 = new Dygraph(
 			document.getElementById("MyChart"),
 			"./ProjetoAquisicao_files/data/data.csv",
@@ -72,6 +103,8 @@
 			xlabel: "Frequência (Hz)",
 			ylabel: "Amplitude",
 			showRangeSelector: false,
+			colors:['#2596be', '#d25400', '#e84c3d', '#2dcc70', '#9b58b5', '#f1c40f'], //azul, laranja, vermelho, verde, roxo, amarelo
+			visibility: [true, true, true, true, true, true],
 			}
 			/*
 			<button type="button" id="0" onclick="change(this)"> first set</button>
