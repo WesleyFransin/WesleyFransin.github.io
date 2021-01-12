@@ -41,28 +41,8 @@
     <div class="markerLink" id="inicio"></div>
 	
 	<div style="height: 20px"></div>
-	
+
 	<div class="chart" id="FreqChart">
-		<form>
-			<label class="checkbox-inline">
-				<input type="checkbox" id="0" value="" onclick='handleClick(this);' checked>Original
-			</label>
-			<label class="checkbox-inline">
-				<input type="checkbox" id="1" value="" onclick='handleClick(this);' checked>Decimado
-			</label>
-			<label class="checkbox-inline">
-				<input type="checkbox" id="2" value="" onclick='handleClick(this);' checked>Filtrado
-			</label>
-			<label class="checkbox-inline">
-				<input type="checkbox" id="3" value="" onclick='handleClick(this);' checked>Decimado com pré-filtro
-			</label>
-			<label class="checkbox-inline">
-				<input type="checkbox" id="4" value="" onclick='handleClick(this);' checked>Interpolado
-			</label>
-			<label class="checkbox-inline">
-				<input type="checkbox" id="5" value="" onclick='handleClick(this);' checked>Com filtro de eco
-			</label>
-		</form>
 	<script>
 		function legendFormatter(data) {
 			if (data.x == null) {
@@ -130,6 +110,30 @@
     */
 		);
 	</script>
+	</div>
+
+	<div style="height: 20px;"></div>
+	<div style="align-content: center; margin: auto; width: 50%;">
+	<form class="form-inline text-center">
+		<label class="checkbox-inline">
+			<input type="checkbox" id="0" value="" onclick='handleClick(this);' checked>Original
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="1" value="" onclick='handleClick(this);' checked>Decimado
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="2" value="" onclick='handleClick(this);' checked>Filtrado
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="3" value="" onclick='handleClick(this);' checked>Decimado com pré-filtro
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="4" value="" onclick='handleClick(this);' checked>Interpolado
+		</label>
+		<label class="checkbox-inline">
+			<input type="checkbox" id="5" value="" onclick='handleClick(this);' checked>Com filtro de eco
+		</label>
+	</form>
 	</div>
 </body>
 </html>

@@ -2,16 +2,11 @@ html {
     overflow: auto;
 }
 
-.form {
-    display: inline-block;
-    margin: auto;
-}
-
 .chart{
 	background-color: #f6f8f9;
 	height: 300px;
     width: 95%;
-	margin: auto;
+    margin: auto;
 }
 
 .header {
