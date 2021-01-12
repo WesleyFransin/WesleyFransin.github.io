@@ -41,27 +41,28 @@
     <div class="markerLink" id="inicio"></div>
 	
 	<div style="height: 20px"></div>
-	<form>
-		<label class="checkbox-inline">
-			<input type="checkbox" id="0" value="" onclick='handleClick(this);' checked>Original
-		</label>
-		<label class="checkbox-inline">
-			<input type="checkbox" id="1" value="" onclick='handleClick(this);' checked>Decimado
-		</label>
-		<label class="checkbox-inline">
-			<input type="checkbox" id="2" value="" onclick='handleClick(this);' checked>Filtrado
-		</label>
-		<label class="checkbox-inline">
-			<input type="checkbox" id="3" value="" onclick='handleClick(this);' checked>Decimado com pré-filtro
-		</label>
-		<label class="checkbox-inline">
-			<input type="checkbox" id="4" value="" onclick='handleClick(this);' checked>Interpolado
-		</label>
-		<label class="checkbox-inline">
-			<input type="checkbox" id="5" value="" onclick='handleClick(this);' checked>Com filtro de eco
-		</label>
-	</form>
-	<div class="chart" id="MyChart">
+	
+	<div class="chart" id="FreqChart">
+		<form>
+			<label class="checkbox-inline">
+				<input type="checkbox" id="0" value="" onclick='handleClick(this);' checked>Original
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" id="1" value="" onclick='handleClick(this);' checked>Decimado
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" id="2" value="" onclick='handleClick(this);' checked>Filtrado
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" id="3" value="" onclick='handleClick(this);' checked>Decimado com pré-filtro
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" id="4" value="" onclick='handleClick(this);' checked>Interpolado
+			</label>
+			<label class="checkbox-inline">
+				<input type="checkbox" id="5" value="" onclick='handleClick(this);' checked>Com filtro de eco
+			</label>
+		</form>
 	<script>
 		function legendFormatter(data) {
 			if (data.x == null) {
@@ -92,8 +93,8 @@
 			//setStatus();
 		}
 
-		g2 = new Dygraph(
-			document.getElementById("MyChart"),
+		g = new Dygraph(
+			document.getElementById("FreqChart"),
 			"./ProjetoAquisicao_files/data/data.csv",
 			{labels: ["Frequência", "Original", "Decimado", "Filtrado", "Decimado com filtro", "Interpolado", "Com filtro de eco"],
 			legend: "always",
